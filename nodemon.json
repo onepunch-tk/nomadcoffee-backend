@@ -1,0 +1,5 @@
+{
+  "ignore": ["build/"],
+  "exec": "npm run babel:build && babel-node build/server.js",
+  "ext": "js json ts"
+}
