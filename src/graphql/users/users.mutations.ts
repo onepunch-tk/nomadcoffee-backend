@@ -17,20 +17,20 @@ export default {
             );
 
             if (existsUser) return {
-                ok:false,
-                error:"Already exists username or email."
+                ok: false,
+                error: "Already exists username or email."
             }
 
             userDto.password = await bcrypt.hash(userDto.password, 10);
-            const createdUser = await client.user.create({
-                data:{
+            const user = await client.user.create({
+                data: {
                     ...userDto,
                 }
             });
 
             return {
-                user:createdUser,
-                ok:true
+                user,
+                ok: true
             }
         }
     }
