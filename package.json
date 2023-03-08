@@ -23,6 +23,7 @@
     "@apollo/server": "^4.4.1",
     "@graphql-tools/load-files": "^6.6.1",
     "@prisma/client": "^4.11.0",
+    "bcrypt": "^5.1.0",
     "dotenv": "^16.0.3",
     "graphql": "^16.6.0",
     "graphql-tools": "^8.3.19"
@@ -33,6 +34,7 @@
     "@babel/node": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-typescript": "^7.21.0",
+    "@types/bcrypt": "^5.0.0",
     "@types/node": "^18.14.6",
     "nodemon": "^2.0.21",
     "prisma": "^4.11.0",

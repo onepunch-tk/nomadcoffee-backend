@@ -1,7 +1,7 @@
 require("dotenv").config();
 import {ApolloServer} from '@apollo/server';
 import {startStandaloneServer} from '@apollo/server/standalone';
-import schema from "./schema";
+import schema from "./graphql/schema";
 
 const server = new ApolloServer({
     schema
