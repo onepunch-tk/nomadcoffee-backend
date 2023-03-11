@@ -1,6 +1,7 @@
 import {User} from "@prisma/client";
 import client from "../../client";
 import jwt from "jsonwebtoken";
+import {UserResolver} from "./users.type";
 
 export const getUser = async (token: string): Promise<User | null> => {
     try {
@@ -12,4 +13,17 @@ export const getUser = async (token: string): Promise<User | null> => {
     } catch {
         return null;
     }
+}
+
+export const protectResolver= (ourResolver:UserResolver):UserResolver => (root, user, context, info) => {
+    if(!context.loggedInUser) {
+        return {
+            result:{
+                ok:false,
+                error:"Please log in to perform this action."
+            }
+        }
+    }
+
+    return ourResolver(root,user,context,info);
 }
