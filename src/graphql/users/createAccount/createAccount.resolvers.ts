@@ -1,10 +1,11 @@
-import {IUserDto} from "../../common/dto";
-import client from "../../client";
-import bcrypt from "bcrypt"
+import {UserResolvers} from "../users.type"
+import client from "../../../client";
+import bcrypt from "bcrypt";
 
-export default {
+const resolvers: UserResolvers = {
     Mutation: {
-        createAccount: async (_: any, userDto: IUserDto) => {
+        createAccount: async (_, userDto) => {
+            console.log(userDto);
             const existsUser = await client.$transaction((tx) =>
                 tx.user.findFirst({
                     where: {
@@ -17,8 +18,10 @@ export default {
             );
 
             if (existsUser) return {
-                ok: false,
-                error: "Already exists username or email."
+                result: {
+                    ok: false,
+                    error: "Already exists username or email."
+                }
             }
 
             userDto.password = await bcrypt.hash(userDto.password, 10);
@@ -30,8 +33,12 @@ export default {
 
             return {
                 user,
-                ok: true
+                result: {
+                    ok: true
+                }
             }
         }
     }
 }
+
+export default resolvers;
