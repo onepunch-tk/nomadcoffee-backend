@@ -3,12 +3,21 @@
     "outDir": "dist",
     "rootDirs": ["src"],
     "lib": ["esnext","dom"],
-    "target": "esnext",
-    "module": "esnext",
+    "target": "es5",
+    "module": "NodeNext",
     "moduleResolution": "node",
     "esModuleInterop": true,
     "types": ["node"],
     "alwaysStrict": true,
-    "noEmit": true
-  }
+    "noEmit": true,
+    "strict": true,
+    "allowJs": true,
+    "pretty": true
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  "include": ["./src/**/*"]
 }

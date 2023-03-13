@@ -4,31 +4,25 @@ type User {
     email:String!
     name:String
     location:String
-    avatarURL:String
+    avatar:String
     githubUsername:String
     createAt:String!
     updateAt:String!
+    followers:[User!]
+    followings:[User!]
+    totalPage:Int!
+    id:Int!
+    isMe:Boolean!
+    isFollowing:Boolean!
 }
 
-type CreateResult {
-    user:User
+type Result {
     ok:Boolean!
     error:String
-}
-
-type Mutation {
-    createAccount(
-        username:String!,
-        email:String!,
-        name:String,
-        location:String,
-        avatarURL:String,
-        githubUsername:String,
-        password:String
-    ):CreateResult
 }
 
 type Query {
     hello:String
 }
+
 `;
