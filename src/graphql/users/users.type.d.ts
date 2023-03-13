@@ -14,6 +14,9 @@ export interface IUserDto {
     avatar:any;
     githubUsername:string;
     password:string;
+    followingPage:number;
+    lastId:number;
+    keyword:string;
 }
 export type UserResolver = (root:any, user:IUserDto, context:IContext, info:GraphQLResolveInfo) => any
 export type UserResolvers = {

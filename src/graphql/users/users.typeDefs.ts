@@ -8,6 +8,12 @@ type User {
     githubUsername:String
     createAt:String!
     updateAt:String!
+    followers:[User!]
+    followings:[User!]
+    totalPage:Int!
+    id:Int!
+    isMe:Boolean!
+    isFollowing:Boolean!
 }
 
 type Result {

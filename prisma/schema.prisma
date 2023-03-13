@@ -21,4 +21,6 @@ model User {
   githubUsername String?
   createAt       DateTime @default(now())
   updateAt       DateTime @updatedAt
+  followings     User[]   @relation("FollowRelation")
+  followers      User[]   @relation("FollowRelation")
 }

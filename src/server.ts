@@ -28,6 +28,7 @@ const server = new ApolloServer<IContext>({
 
 (async () => {
     await server.start();
+    app.use(logger("tiny"));
     app.use("/uploads",express.static(path.join(process.cwd(),"uploads")));
     app.use(
         '/graphql',
