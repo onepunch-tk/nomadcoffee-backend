@@ -1,6 +1,7 @@
 
 node_modules/
 build/
+uploads/**/*
 .env
 
 # Created by https://www.toptal.com/developers/gitignore/api/webstorm+all,visualstudiocode,visualstudio,macos,windows

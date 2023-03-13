@@ -4,7 +4,7 @@ type User {
     email:String!
     name:String
     location:String
-    avatarURL:String
+    avatar:String
     githubUsername:String
     createAt:String!
     updateAt:String!

@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "babel:build": "babel --extensions '.ts' src/ -d ./build/",
-    "dev": "nodemon --delay 3",
+    "dev": "nodemon",
     "migrate": "npx prisma migrate dev",
     "studio": "npx prisma studio"
   },
@@ -28,7 +28,9 @@
     "dotenv": "^16.0.3",
     "graphql": "^16.6.0",
     "graphql-tools": "^8.3.19",
-    "jsonwebtoken": "^9.0.0"
+    "graphql-upload": "^15.0.2",
+    "jsonwebtoken": "^9.0.0",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.0",
@@ -38,7 +40,9 @@
     "@babel/preset-typescript": "^7.21.0",
     "@types/bcrypt": "^5.0.0",
     "@types/cors": "^2.8.13",
+    "@types/graphql-upload": "^15.0.2",
     "@types/jsonwebtoken": "^9.0.1",
+    "@types/morgan": "^1.9.4",
     "@types/node": "^18.14.6",
     "nodemon": "^2.0.21",
     "prisma": "^4.11.0",
