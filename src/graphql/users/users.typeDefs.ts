@@ -21,8 +21,4 @@ type Result {
     error:String
 }
 
-type Query {
-    hello:String
-}
-
 `;
